@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dummy-web
+  namespace: observability
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dummy-web
+  template:
+    metadata:
+      labels:
+        app: dummy-web
+    spec:
+      containers:
+      - name: web
+        image: nginx:alpine
+        ports:
+        - containerPort: 80
