@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: dummy-web
+  namespace: sen-dev-dev-azr-k8s-sen-w2-001
+spec:
+  selector:
+    app: dummy-web
+  ports:
+  - port: 80
+    targetPort: 80
